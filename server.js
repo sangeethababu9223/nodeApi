@@ -5,12 +5,14 @@ const todos = [
   { id: 3, text: "do three" },
 ];
 const server = http.createServer((req, res) => {
+  res.statusCode = 404;
   res.setHeader("Content-Type", "application/json");
   res.setHeader("X-Powered-By", "Node.js");
   res.end(
     JSON.stringify({
-      success: true,
-      data: todos,
+      success: false,
+      error: "Not found",
+      data: null,
     })
   );
 });
