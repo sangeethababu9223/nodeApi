@@ -6,7 +6,7 @@ dotenv.config({ path: "./config/config.env" });
 const app = express();
 
 app.get("/", (req, res) => {
-  res.json({ name: "Express course" });
+  res.sendStatus(400);
 });
 const PORT = process.env.PORT || 5000;
 app.listen(
